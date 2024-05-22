@@ -88,7 +88,7 @@ public class Home {
 		lblNewLabel_1.setBounds(225, 223, 219, 15);
 		panel.add(lblNewLabel_1);
 		
-		JButton insertBtn = new JButton("Insert Menu");
+		JButton insertBtn = new JButton("InsertPassenger");
 		insertBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				InsertMenuView insertView = new InsertMenuView();
@@ -98,12 +98,14 @@ public class Home {
 		insertBtn.setForeground(new Color(181, 182, 100));
 		insertBtn.setBackground(new Color(254, 255, 194));
 		insertBtn.setFont(new Font("Arial", Font.PLAIN, 20));
-		insertBtn.setBounds(53, 298, 228, 47);
+		insertBtn.setBounds(53, 266, 228, 47);
 		panel.add(insertBtn);
 		
-		JButton selectBtn = new JButton("Select Menu");
+		JButton selectBtn = new JButton("ShowFlightCount");
 		selectBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				ShowFlightCount flightCount = new ShowFlightCount();
+				flightCount.frame.setVisible(true);
 			}
 		});
 		selectBtn.setForeground(new Color(181, 182, 100));
@@ -112,7 +114,7 @@ public class Home {
 		selectBtn.setBounds(53, 379, 228, 47);
 		panel.add(selectBtn);
 		
-		JButton DeleteBtn = new JButton("Delete Menu");
+		JButton DeleteBtn = new JButton("Delete Passenger");
 		DeleteBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				DeleteMenu dm = new DeleteMenu();
@@ -122,7 +124,7 @@ public class Home {
 		DeleteBtn.setForeground(new Color(181, 182, 100));
 		DeleteBtn.setFont(new Font("Arial", Font.PLAIN, 20));
 		DeleteBtn.setBackground(new Color(254, 255, 194));
-		DeleteBtn.setBounds(53, 461, 228, 47);
+		DeleteBtn.setBounds(53, 487, 228, 47);
 		panel.add(DeleteBtn);
 		
 		JLabel lblNewLabel_2 = new JLabel("@ Ewha Womans Uni");
@@ -130,6 +132,29 @@ public class Home {
 		lblNewLabel_2.setFont(new Font("Arial", Font.PLAIN, 20));
 		lblNewLabel_2.setBounds(75, 552, 217, 15);
 		panel.add(lblNewLabel_2);
+		
+		JButton btnNewButton = new JButton("Booking");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				BookingView view = new BookingView();
+				view.frame.setVisible(true);
+			}
+		});
+		btnNewButton.setFont(new Font("Arial", Font.PLAIN, 20));
+		btnNewButton.setBounds(53, 323, 228, 46);
+		panel.add(btnNewButton);
+		
+		JButton updateBtn = new JButton("Update payStatus");
+		updateBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				UpdateView view= new UpdateView();
+				view.frame.setVisible(true);
+			}
+		});
+		updateBtn.setBackground(new Color(254, 255, 194));
+		updateBtn.setForeground(new Color(181, 182, 100));
+		updateBtn.setFont(new Font("Arial", Font.PLAIN, 20));
+		updateBtn.setBounds(53, 436, 228, 41);
+		panel.add(updateBtn);
 	}
-
 }
