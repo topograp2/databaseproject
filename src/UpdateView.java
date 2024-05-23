@@ -15,7 +15,6 @@ public class UpdateView {
 
 	JFrame frame;
 	private JTextField textField;
-	private JTextField textField1;
 	private JButton submitBtn;
 	private JTextArea textArea;
 
@@ -72,31 +71,22 @@ public class UpdateView {
 		panel.add(textField);
 		textField.setColumns(10);
 		
-		textField1 = new JTextField();
-		textField1.setBounds(210, 126, 106, 21);
-		panel.add(textField1);
-		textField1.setColumns(10);
-		
-		JLabel lblNewLabel_2 = new JLabel("first name");
+		JLabel lblNewLabel_2 = new JLabel("passenger ID");
 		lblNewLabel_2.setBounds(74, 103, 80, 15);
 		panel.add(lblNewLabel_2);
-		
-		JLabel lblNewLabel_3 = new JLabel("last name");
-		lblNewLabel_3.setBounds(210, 103, 85, 15);
-		panel.add(lblNewLabel_3);
 		
 		submitBtn = new JButton("submit");
 		submitBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String firstName = textField.getText();
-				String lastName = textField.getText();
+				int passengerID = Integer.parseInt(textField.getText());
 				
-				String res = ManageMenu.updatePaymentStatus(firstName, lastName);
+				
+				String res = ManageMenu.updatePaymentStatus(passengerID);
 				textArea.append(res+"\n");
 				
 			}
 		});
-		submitBtn.setBounds(358, 125, 95, 23);
+		submitBtn.setBounds(206, 125, 95, 23);
 		panel.add(submitBtn);
 		
 		textArea = new JTextArea();
